@@ -1,0 +1,13 @@
+Destination
+Bengaluru Airport
+
+Current Battery
+68%
+
+Vehicle
+EV / 60 kWh
+
+Preferences
+○ Fastest
+● Energy Efficient
+○ Battery Safe
