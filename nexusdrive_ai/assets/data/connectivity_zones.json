@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cz_001",
+    "name": "Central Silk Board to Bellandur ORR",
+    "status": "GOOD",
+    "coverageScore": 0.95,
+    "cellularNetwork": "5G-SA",
+    "latencyMs": 28,
+    "riskLevel": "LOW",
+    "notes": "Dense 5G infrastructure along tech corridor"
+  },
+  {
+    "id": "cz_002",
+    "name": "NICE Ring Road Elevated South Bypass",
+    "status": "POOR",
+    "coverageScore": 0.42,
+    "cellularNetwork": "3G/EDGE",
+    "latencyMs": 380,
+    "riskLevel": "HIGH",
+    "notes": "Cellular deadzone near Bannerghatta forest perimeter"
+  },
+  {
+    "id": "cz_003",
+    "name": "Hosur Road Expressway to Electronic City",
+    "status": "MODERATE",
+    "coverageScore": 0.78,
+    "cellularNetwork": "4G-LTE",
+    "latencyMs": 65,
+    "riskLevel": "MEDIUM",
+    "notes": "Elevated flyover shadow causes intermittent handoff drops"
+  },
+  {
+    "id": "cz_004",
+    "name": "Whitefield to KR Puram Urban Spine",
+    "status": "GOOD",
+    "coverageScore": 0.92,
+    "cellularNetwork": "5G",
+    "latencyMs": 32,
+    "riskLevel": "LOW",
+    "notes": "Strong telecom fiber backhaul coverage"
+  },
+  {
+    "id": "cz_005",
+    "name": "Hebbal - Devanahalli Airport Corridor",
+    "status": "GOOD",
+    "coverageScore": 0.90,
+    "cellularNetwork": "5G-SA",
+    "latencyMs": 35,
+    "riskLevel": "LOW",
+    "notes": "Continuous highway cellular line-of-sight towers"
+  },
+  {
+    "id": "cz_006",
+    "name": "Bannerghatta Valley & Forest Fringe Route",
+    "status": "CRITICAL_DROP",
+    "coverageScore": 0.25,
+    "cellularNetwork": "NO_SERVICE",
+    "latencyMs": 999,
+    "riskLevel": "CRITICAL",
+    "notes": "Complete cloud disconnect zone; offline edge intelligence mandatory"
+  }
+]
