@@ -154,18 +154,6 @@ $$\text{RouteScore} = w_{\text{energy}} \cdot S_{\text{energy}} + w_{\text{safet
 
 ---
 
-## ⏱️ 90-Second Judge Presentation Script
-
-| Time | Step | Action | Verifiable Result |
-| :---: | :--- | :--- | :--- |
-| **00:00 - 00:15** | **Launch & Hardware Telemetry** | Launch app on phone. Show top right pill: `HARDWARE`. Tap `Diagnostics` to demonstrate live accelerometer moving with phone tilt. | Proves native Android phone sensor integration. |
-| **00:15 - 00:35** | **Plan Journey & Route Evaluation** | Return to Home. Tap `Plan Journey & Analyze Routes`. Destination: *Electronic City Phase 1*. Tap `Analyze Route with Edge AI`. | Edge inference completes in **12 ms**. Recommended route displayed with full factor breakdown. |
-| **00:35 - 00:55** | **Simulate Battery Drop & Rescue** | On Route Analysis screen, tap `15%` chip in the `TEST SoC` bar. | Critical warning flags immediately. Tap `RESCUE`. App recalculates diversion via nearest DC Fast charger (Indiranagar Hub, 60 kW) ensuring safe arrival. |
-| **00:55 - 01:15** | **Voice Copilot** | Return to Home. Tap microphone icon (or `TEST VOICE`). Say: *"Optimize my route for battery."* | App parses intent and updates driving mode to **Battery Safe**, re-evaluating routes dynamically. |
-| **01:15 - 01:30** | **Offline Airgap & Office Kit Cast** | Tap `OFFLINE AIRGAP` chip or toggle device Airplane Mode. Re-run analysis. Tap `Cast to PC` in AppBar. | App functions with 0% network connectivity. Telemetry payload copied for PC big-screen display. |
-
----
-
 ## 🧪 Automated Testing & Code Quality Audit
 
 ### 1. Test Suite Execution (`flutter test`)
@@ -248,15 +236,15 @@ Connect your Android / iQOO phone via USB with USB Debugging enabled, then execu
 
 ```powershell
 # Install the verified Release APK:
-adb install -r "c:\Users\KRISHANU\Desktop\NexusDrive AI Prototype\nexusdrive_ai\build\app\outputs\flutter-apk\app-release.apk"
+adb install -r "NexusDrive AI Prototype\nexusdrive_ai\build\app\outputs\flutter-apk\app-release.apk"
 
 # Or install the Debug APK:
-adb install -r "c:\Users\KRISHANU\Desktop\NexusDrive AI Prototype\nexusdrive_ai\build\app\outputs\flutter-apk\app-debug.apk"
+adb install -r "NexusDrive AI Prototype\nexusdrive_ai\build\app\outputs\flutter-apk\app-debug.apk"
 ```
 
 ### Option 2: Build & Run from Source
 ```powershell
-cd "c:\Users\KRISHANU\Desktop\NexusDrive AI Prototype\nexusdrive_ai"
+cd "NexusDrive AI Prototype\nexusdrive_ai"
 
 # 1. Fetch dependencies
 flutter pub get
