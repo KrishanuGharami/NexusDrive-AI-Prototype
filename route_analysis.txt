@@ -1,0 +1,32 @@
+EDGE AI ROUTE ANALYSIS
+
+Recommended
+⚡ ENERGY SAFE
+
+42.8 km
+48 min
+12% estimated battery
+92% arrival confidence
+
+────────────────────
+
+FASTEST
+39.4 km
+41 min
+16% battery
+
+────────────────────
+
+LOW CONNECTIVITY SAFE
+44.1 km
+51 min
+13% battery
+Offline ✓
+
+Local AI selected this route because:
+
+✓ Battery is sufficient
+✓ Lower estimated energy consumption
+✓ Charging fallback available
+✓ Connectivity risk detected
+✓ Route data available offline
