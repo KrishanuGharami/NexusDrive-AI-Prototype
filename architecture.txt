@@ -1,0 +1,43 @@
+                 ┌──────────────────────┐
+                 │     iQOO PHONE       │
+                 │                      │
+                 │ GPS                  │
+                 │ Battery              │
+                 │ Motion Sensors       │
+                 │ Voice                │
+                 └──────────┬───────────┘
+                            │
+                            ▼
+                ┌───────────────────────┐
+                │   TELEMETRY ENGINE    │
+                └──────────┬────────────┘
+                           │
+                           ▼
+              ┌──────────────────────────┐
+              │      EDGE AI ENGINE       │
+              │                           │
+              │ Route scoring             │
+              │ Energy prediction         │
+              │ Battery risk              │
+              │ Route recommendation      │
+              └────────────┬─────────────┘
+                           │
+             ┌─────────────┼──────────────┐
+             ▼             ▼              ▼
+       Route Engine   Battery Model   Risk Engine
+             │             │              │
+             └─────────────┼──────────────┘
+                           ▼
+                  ┌──────────────────┐
+                  │ NEXUSDRIVE UI    │
+                  │                  │
+                  │ Recommended      │
+                  │ Route            │
+                  │ Battery Rescue   │
+                  └──────────────────┘
+                           │
+                           ▼
+                  Encrypted Local DB
+                           │
+                           ▼
+                    Offline operation
