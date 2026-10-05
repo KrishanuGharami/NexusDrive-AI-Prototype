@@ -45,14 +45,22 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: AppBar(
             title: Row(
               children: [
-                Container(
-                  padding: const EdgeInsets.all(6),
-                  decoration: BoxDecoration(
-                    color: AppColors.cyanAccent.withOpacity(0.15),
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: AppColors.cyanAccent.withOpacity(0.4)),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.asset(
+                    'assets/icons/app_icon.png',
+                    width: 34,
+                    height: 34,
+                    fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) => Container(
+                      padding: const EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        color: AppColors.cyanAccent.withOpacity(0.15),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: const Icon(Icons.electric_car_rounded, color: AppColors.cyanAccent, size: 20),
+                    ),
                   ),
-                  child: const Icon(Icons.bolt_rounded, color: AppColors.cyanAccent, size: 20),
                 ),
                 const SizedBox(width: 10),
                 const Column(
@@ -63,8 +71,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, letterSpacing: 0.5),
                     ),
                     Text(
-                      'Offline Edge EV Copilot',
-                      style: TextStyle(fontSize: 10, color: AppColors.textTertiary, fontWeight: FontWeight.w600),
+                      'Smarter Routes • Greener Journeys',
+                      style: TextStyle(fontSize: 10, color: AppColors.cyanAccent, fontWeight: FontWeight.w600),
                     ),
                   ],
                 ),

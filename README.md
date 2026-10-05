@@ -1,11 +1,18 @@
-# NexusDrive AI — Offline-First EV Intelligence & Edge Copilot
+<p align="center">
+  <img src="nexusdrive_ai/assets/images/app_logo.png" width="180" alt="NexusDrive AI Official Logo" style="border-radius: 28px; box-shadow: 0 8px 24px rgba(0,229,255,0.25);" />
+</p>
 
-[![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iQOO-blue?style=for-the-badge&logo=android)](https://developer.android.com)
-[![Framework](https://img.shields.io/badge/Flutter-3.47.2-02569B?style=for-the-badge&logo=flutter)](https://flutter.dev)
-[![Language](https://img.shields.io/badge/Dart-3.13.2-0175C2?style=for-the-badge&logo=dart)](https://dart.dev)
-[![SDK](https://img.shields.io/badge/Android%20SDK-API%2036-green?style=for-the-badge&logo=android)](https://developer.android.com/studio)
-[![Tests](https://img.shields.io/badge/Tests-13%2F13%20Passed-success?style=for-the-badge&logo=githubactions)](https://github.com)
-[![Inference](https://img.shields.io/badge/Edge%20Inference-12.4ms-blueviolet?style=for-the-badge)](https://github.com)
+# <p align="center">NexusDrive AI — Offline-First EV Intelligence & Edge Copilot</p>
+<p align="center"><em>Smarter Routes • Greener Journeys</em></p>
+
+<p align="center">
+  <a href="https://developer.android.com"><img src="https://img.shields.io/badge/Platform-Android%20%7C%20iQOO-blue?style=for-the-badge&logo=android" /></a>
+  <a href="https://flutter.dev"><img src="https://img.shields.io/badge/Flutter-3.47.2-02569B?style=for-the-badge&logo=flutter" /></a>
+  <a href="https://dart.dev"><img src="https://img.shields.io/badge/Dart-3.13.2-0175C2?style=for-the-badge&logo=dart" /></a>
+  <a href="https://developer.android.com/studio"><img src="https://img.shields.io/badge/Android%20SDK-API%2036-green?style=for-the-badge&logo=android" /></a>
+  <a href="https://github.com"><img src="https://img.shields.io/badge/Tests-13%2F13%20Passed-success?style=for-the-badge&logo=githubactions" /></a>
+  <img src="https://img.shields.io/badge/Edge%20Inference-12.4ms-blueviolet?style=for-the-badge" />
+</p>
 
 > **iQOO Hackathon 2026 — Grand Finale (Bengaluru)**  
 > **Track:** Mobility  

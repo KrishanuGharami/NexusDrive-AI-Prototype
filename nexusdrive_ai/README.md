@@ -1,4 +1,9 @@
-# NexusDrive AI — Offline-First EV Intelligence & Edge Copilot
+<p align="center">
+  <img src="assets/images/app_logo.png" width="180" alt="NexusDrive AI Official Logo" style="border-radius: 28px; box-shadow: 0 8px 24px rgba(0,229,255,0.25);" />
+</p>
+
+# <p align="center">NexusDrive AI — Offline-First EV Intelligence & Edge Copilot</p>
+<p align="center"><em>Smarter Routes • Greener Journeys</em></p>
 
 > **iQOO Hackathon 2026 Grand Finale Entry**  
 > **Track:** Mobility — Grand Finale, Bengaluru  
