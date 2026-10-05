@@ -205,7 +205,6 @@ No issues found! (ran in 6.3s)
 ## 📂 Repository Directory Map
 
 ```
-c:/Users/KRISHANU/Desktop/NexusDrive AI Prototype/
 ├── README.md                          # Root professional project documentation
 ├── architecture.txt                   # Detailed architectural blueprint & tensor specs
 ├── home.txt                           # Home & Hero UX specification
