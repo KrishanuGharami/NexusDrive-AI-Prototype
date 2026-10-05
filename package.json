@@ -1,0 +1,21 @@
+{
+  "name": "nexusdrive-ai-prototype",
+  "version": "1.0.0",
+  "description": "NexusDrive AI — Offline-First EV Intelligence & Edge Copilot for iQOO Hackathon Grand Finale",
+  "private": true,
+  "scripts": {
+    "build": "bash vercel-build.sh",
+    "vercel-build": "bash vercel-build.sh",
+    "serve": "npx serve nexusdrive_ai/build/web"
+  },
+  "keywords": [
+    "ev",
+    "flutter",
+    "edge-ai",
+    "offline-first",
+    "iqoo-hackathon",
+    "vercel"
+  ],
+  "author": "Krishanu Gharami",
+  "license": "MIT"
+}

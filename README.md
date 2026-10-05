@@ -9,7 +9,7 @@
   <a href="https://developer.android.com"><img src="https://img.shields.io/badge/Platform-Android%20%7C%20iQOO-blue?style=for-the-badge&logo=android" /></a>
   <a href="https://flutter.dev"><img src="https://img.shields.io/badge/Flutter-3.47.2-02569B?style=for-the-badge&logo=flutter" /></a>
   <a href="https://dart.dev"><img src="https://img.shields.io/badge/Dart-3.13.2-0175C2?style=for-the-badge&logo=dart" /></a>
-  <a href="https://developer.android.com/studio"><img src="https://img.shields.io/badge/Android%20SDK-API%2036-green?style=for-the-badge&logo=android" /></a>
+  <a href="https://vercel.com"><img src="https://img.shields.io/badge/Deploy-Vercel%20Optimized-black?style=for-the-badge&logo=vercel" /></a>
   <a href="https://github.com"><img src="https://img.shields.io/badge/Tests-13%2F13%20Passed-success?style=for-the-badge&logo=githubactions" /></a>
   <img src="https://img.shields.io/badge/Edge%20Inference-12.4ms-blueviolet?style=for-the-badge" />
 </p>
@@ -258,6 +258,23 @@ flutter test
 # 4. Launch live on device
 flutter run --release
 ```
+
+### Option 3: Deploy to Vercel (Web / PWA)
+The repository is fully optimized for continuous deployment on **Vercel**:
+
+```powershell
+# Deploy instantly using Vercel CLI:
+npm i -g vercel
+vercel --prod
+```
+
+#### Vercel Configuration Highlights:
+- **`vercel.json`**: Pre-configured SPA rewrite rules (`/(.*) -> /index.html`), preventing 404s on browser refreshes.
+- **High-Performance Edge Caching**: 1-year immutable caching on CanvasKit WebAssembly (`.wasm`), precompiled JavaScript bundles (`.js`), fonts, and offline dataset vectors (`public, max-age=31536000, immutable`).
+- **Immediate Service Worker Updates**: `flutter_service_worker.js` configured with `no-cache, must-revalidate` so users immediately receive the latest edge algorithms upon deployment.
+- **Cross-Origin Isolation**: Automated `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Embedder-Policy: credentialless` headers enabling high-performance multi-threaded Skwasm execution.
+- **Automated CI/CD Build Script (`vercel-build.sh`)**: Automatically bootstraps the Flutter SDK in standard Vercel Linux build containers, runs `flutter pub get`, and compiles the release web bundle to `nexusdrive_ai/build/web`.
+- **Responsive Frame Adaptivity**: Automatic responsive centering on desktop displays (`maxWidth: 540px`) with ambient Dark EV glow and native full-width viewport scaling on mobile devices.
 
 ---
 

@@ -82,11 +82,14 @@ class JourneySummaryCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 8),
-              const Text(
-                'Bengaluru Urban Hub',
-                style: TextStyle(
-                  fontSize: 11,
-                  color: AppColors.textTertiary,
+              const Expanded(
+                child: Text(
+                  'Bengaluru Urban Hub',
+                  style: TextStyle(
+                    fontSize: 11,
+                    color: AppColors.textTertiary,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],

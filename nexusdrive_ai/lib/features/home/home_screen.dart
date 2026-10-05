@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: 34,
                     height: 34,
                     fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => Container(
+                    errorBuilder: (_, _, _) => Container(
                       padding: const EdgeInsets.all(6),
                       decoration: BoxDecoration(
                         color: AppColors.cyanAccent.withOpacity(0.15),
@@ -63,18 +63,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 const SizedBox(width: 10),
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'NexusDrive AI',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, letterSpacing: 0.5),
-                    ),
-                    Text(
-                      'Smarter Routes • Greener Journeys',
-                      style: TextStyle(fontSize: 10, color: AppColors.cyanAccent, fontWeight: FontWeight.w600),
-                    ),
-                  ],
+                const Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'NexusDrive AI',
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, letterSpacing: 0.5),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Text(
+                        'Smarter Routes • Greener Journeys',
+                        style: TextStyle(fontSize: 10, color: AppColors.cyanAccent, fontWeight: FontWeight.w600),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

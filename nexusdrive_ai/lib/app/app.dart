@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import '../core/constants/app_constants.dart';
 import '../data/datasources/local_charging_datasource.dart';
@@ -116,9 +117,34 @@ class _NexusDriveAppState extends State<NexusDriveApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'NexusDrive AI',
+      title: 'NexusDrive AI — Offline EV Copilot',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.darkTheme,
+      builder: (context, child) {
+        if (!kIsWeb) return child ?? const SizedBox.shrink();
+        final screenWidth = MediaQuery.of(context).size.width;
+        if (screenWidth <= 600) return child ?? const SizedBox.shrink();
+
+        return Container(
+          color: const Color(0xFF06090F),
+          alignment: Alignment.center,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 540),
+            child: Container(
+              decoration: const BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0x40000000),
+                    blurRadius: 30,
+                    spreadRadius: 4,
+                  ),
+                ],
+              ),
+              child: child ?? const SizedBox.shrink(),
+            ),
+          ),
+        );
+      },
       home: _MainNavigationScaffold(
         demoController: _demoController,
         routeAiService: _routeAiService,

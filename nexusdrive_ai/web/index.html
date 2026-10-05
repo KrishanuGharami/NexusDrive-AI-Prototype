@@ -1,46 +1,251 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
-  <!-- iOS meta tags & icons -->
+  <!-- Primary Meta Tags -->
+  <title>NexusDrive AI — Offline-First EV Intelligence & Edge Copilot</title>
+  <meta name="title" content="NexusDrive AI — Offline-First EV Intelligence & Edge Copilot">
+  <meta name="description" content="Offline-first EV intelligence and route optimization copilot built for iQOO Hackathon 2026 Grand Finale. Sub-15ms edge inference, real-time battery rescue, zero cloud latency.">
+  <meta name="keywords" content="EV, Electric Vehicle, Offline AI, Route Optimization, Battery Rescue, iQOO Hackathon, Flutter">
+  <meta name="author" content="Krishanu Gharami">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nexusdrive-ai.vercel.app/">
+  <meta property="og:title" content="NexusDrive AI — Offline-First EV Intelligence & Edge Copilot">
+  <meta property="og:description" content="Sub-15ms offline edge inference, dynamic battery reserve safety, and autonomous battery rescue routing for electric vehicles.">
+  <meta property="og:image" content="icons/Icon-512.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="NexusDrive AI — Offline EV Copilot">
+  <meta property="twitter:description" content="Offline-first EV intelligence & route optimization copilot for iQOO Hackathon Grand Finale.">
+  <meta property="twitter:image" content="icons/Icon-512.png">
+
+  <!-- Mobile & PWA Configuration -->
+  <meta name="theme-color" content="#06090F">
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="nexusdrive_ai">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="NexusDrive AI">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>nexusdrive_ai</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- Ambient Dark EV Splash Screen Styles -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: #06090F;
+      color: #E2E8F0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      overflow: hidden;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 30%, #0F172A 0%, #06090F 85%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      transition: opacity 0.45s ease-out, visibility 0.45s ease-out;
+    }
+
+    #loading-screen.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .brand-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 24px;
+      max-width: 360px;
+    }
+
+    .logo-wrapper {
+      position: relative;
+      width: 96px;
+      height: 96px;
+      margin-bottom: 24px;
+    }
+
+    .logo-glow {
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      right: -8px;
+      bottom: -8px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(0, 229, 255, 0.4), rgba(0, 230, 118, 0.3));
+      filter: blur(14px);
+      animation: pulseGlow 2.4s ease-in-out infinite alternate;
+    }
+
+    .logo-img {
+      position: relative;
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      border: 1.5px solid rgba(0, 229, 255, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      object-fit: cover;
+    }
+
+    .brand-title {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+      background: linear-gradient(90deg, #FFFFFF 0%, #00E5FF 55%, #00E676 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-subtitle {
+      font-size: 13px;
+      font-weight: 500;
+      color: #94A3B8;
+      letter-spacing: 0.5px;
+      margin-bottom: 28px;
+    }
+
+    .progress-bar-container {
+      width: 200px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 14px;
+    }
+
+    .progress-bar-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 45%;
+      background: linear-gradient(90deg, #00E5FF, #00E676);
+      border-radius: 999px;
+      animation: progressIndeterminate 1.6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+
+    .status-text {
+      font-size: 11.5px;
+      color: #64748B;
+      letter-spacing: 0.3px;
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        opacity: 0.4;
+        transform: scale(0.96);
+      }
+      100% {
+        opacity: 0.85;
+        transform: scale(1.06);
+      }
+    }
+
+    @keyframes progressIndeterminate {
+      0% {
+        left: -40%;
+        width: 30%;
+      }
+      50% {
+        left: 30%;
+        width: 60%;
+      }
+      100% {
+        left: 100%;
+        width: 30%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!--
-    You can customize the "flutter_bootstrap.js" script.
-    This is useful to provide a custom configuration to the Flutter loader
-    or to give the user feedback during the initialization process.
+  <!-- Ambient EV Initializing Splash -->
+  <div id="loading-screen">
+    <div class="brand-container">
+      <div class="logo-wrapper">
+        <div class="logo-glow"></div>
+        <img class="logo-img" src="icons/Icon-192.png" alt="NexusDrive AI Logo" />
+      </div>
+      <h1 class="brand-title">NexusDrive AI</h1>
+      <p class="brand-subtitle">Offline-First EV Intelligence & Edge Copilot</p>
+      
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill"></div>
+      </div>
+      <span class="status-text" id="status-label">Initializing Edge Engine...</span>
+    </div>
+  </div>
 
-    For more details:
-    * https://docs.flutter.dev/platform-integration/web/initialization
-  -->
+  <script>
+    // Smooth splash transition on Flutter first frame
+    let isDismissed = false;
+    function dismissSplash() {
+      if (isDismissed) return;
+      isDismissed = true;
+      const loader = document.getElementById('loading-screen');
+      if (loader) {
+        loader.classList.add('fade-out');
+        setTimeout(function() {
+          if (loader.parentNode) {
+            loader.parentNode.removeChild(loader);
+          }
+        }, 500);
+      }
+    }
+
+    window.addEventListener('flutter-first-frame', dismissSplash);
+
+    // Dynamic telemetry status messages while loading
+    const statuses = [
+      "Calibrating Battery Rescue Copilot...",
+      "Loading Local Highway Corridors...",
+      "Initializing On-Device Edge Tensors...",
+      "Readying Offline Copilot..."
+    ];
+    let statusIndex = 0;
+    const statusInterval = setInterval(function() {
+      if (isDismissed) {
+        clearInterval(statusInterval);
+        return;
+      }
+      const label = document.getElementById('status-label');
+      if (label && statusIndex < statuses.length) {
+        label.innerText = statuses[statusIndex++];
+      }
+    }, 900);
+
+    // Fallback safe dismiss after 8s if event wasn't captured
+    setTimeout(dismissSplash, 8000);
+  </script>
+
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
