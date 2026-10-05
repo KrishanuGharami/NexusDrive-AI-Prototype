@@ -1,0 +1,34 @@
+================================================================================
+                    NEXUSDRIVE AI — BATTERY RESCUE COPILOT
+================================================================================
+
+1. SCREEN OBJECTIVE
+Handles critical EV battery situations when remaining charge is insufficient to safely
+reach destination or drops below the 20% rescue threshold.
+
+2. RESCUE TRIGGER LOGIC
+Battery Rescue is automatically engaged when:
+- Current battery percentage < 20.0%, OR
+- Projected arrival reserve SoC for the chosen route < 15.0%
+
+3. RESCUE COPILOT WORKFLOW
+1. Battery Risk Assessment Card:
+   - Current SoC (highlighted in Critical Red).
+   - Distance to destination.
+   - Deficit analysis (e.g. "Direct arrival reserve is -2.4% -> Stranding Hazard").
+2. Local Charger Fallback Discovery & Ranking:
+   - Queries local charging dataset offline.
+   - Ranks compatible fast chargers using composite score:
+     Score = (10 / (Dist + 0.5)) + (PowerKw * 0.1) + (AvailablePorts > 0 ? 5.0 : 0.0)
+   - Recommends the highest ranked station (e.g. 60kW DC Hub, 4 ports, 1.8 km away).
+3. Route Recalculation via Charger:
+   - Constructs a new rescue route with waypoints:
+     Current Position -> ⚡ Recommended Station -> Final Destination.
+   - Recalculates total travel time including charging duration to 80% SoC.
+   - Updates projected arrival reserve to a guaranteed safe buffer (~72%).
+4. Decision Explanation:
+   - Transparently states: "Route recalculated because current battery (15%) cannot safely
+     reach destination without stranding. Diverting to Indiranagar Hub (60 kW DC) provides
+     sufficient charging with 4 open ports."
+5. One-Tap Action:
+   - "Accept Rescue Route & Divert" updates navigation with zero cloud dependency.
